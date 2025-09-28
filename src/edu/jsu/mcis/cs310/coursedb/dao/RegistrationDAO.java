@@ -10,8 +10,8 @@ public class RegistrationDAO {
     
     private final DAOFactory daoFactory;
     private static final String QUERY_CREATE = "INSERT INTO registration(studentid, termid, crn) VALUES(?, ?, ?)";
-    private static final String QUERY_DELETE = "DELETE FROM registration WHERE studentid = ?, termid= ?, crn = ?";
-    private static final String QUERY_DELETE_ALL = "DELETE FROM registration WHERE studentid = ?, termid= ?";
+    private static final String QUERY_DELETE = "DELETE FROM registration WHERE studentid = ?, termid = ?, crn = ?";
+    private static final String QUERY_DELETE_ALL = "DELETE FROM registration WHERE studentid = ?, termid = ?";
     private static final String QUERY_LIST = "SELECT * FROM registration WHERE studentid = ? AND termid = ?  ORDER BY crn";
     
     
