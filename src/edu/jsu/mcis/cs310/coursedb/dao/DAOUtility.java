@@ -15,9 +15,18 @@ public class DAOUtility {
         try {
         
             if (rs != null) {
-
-                // INSERT YOUR CODE HERE
-
+                ResultSetMetaData rsmd = rs.getMetaData();
+                
+                while (rs.next()){
+                    JsonObject datapoint = new JsonObject();
+                    
+                    for (int i = 0; i < rsmd.getColumnCount(); i++){
+                        datapoint.put(rs.getNString(i), rs.getString(i));
+                        //This line gets the column name as the key and the field as the value.
+                    }
+                    
+                    records.add(datapoint);
+                }
             }
             
         }
